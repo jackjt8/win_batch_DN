@@ -4,7 +4,7 @@
 
 ### Setup
 
-1. Download and setup either of the following:
+1. Download and setup one or both of following (assuming you meet the requirements):
 
       [IntelOIDenoiser (CPU must support SSE4.1)](https://github.com/DeclanRussell/IntelOIDenoiser)
 
@@ -20,4 +20,7 @@
 ---
 
 ### Usage
-Drag and drop one or more .pngs onto this .bat file to denoise them.
+
+1. Ensure there are **no** spaces in the image file name.
+
+2. Drag and drop one or more .pngs onto this .bat file to denoise them.
