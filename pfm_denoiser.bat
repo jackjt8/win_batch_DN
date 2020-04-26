@@ -10,20 +10,18 @@ REM 	ie ...\oidn-1.2.0.x64.vc14.windows\bin\denoise.exe
 REM
 REM Drag and drop one or more .pfm files onto this .bat file to denoise them.
 
-set dn_path="D:\Programs\oidn-1.2.0.x64.vc14.windows\bin\denoise.exe"
+SET dn_path="D:\Programs\oidn-1.2.0.x64.vc14.windows\bin\denoise.exe"
 
 :Loop
 IF "%1"=="" GOTO Continue
 	:loop
 		IF NOT "%~x1"==".pfm" GOTO PFMerror
-		REM %~x1 for filename
 		ECHO ===
 		ECHO Input %~n1
 		ECHO Output %~n1_dn%~x1
 		ECHO ===
 		DIR /b /a-d %~dp1%~n1*%~x1 > %temp%\pfmFileList
 		FIND %temp%\pfmFileList ".albedo.">nul
-		REM notfound else found
 		if errorlevel 1 (GOTO denoise_h) else (
 			FIND %temp%\pfmFileList ".normal.">nul
 			if errorlevel 1 (GOTO denoise_ha) else (GOTO denoise_han)
