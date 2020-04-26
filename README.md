@@ -31,8 +31,6 @@
 
 ### Usage
 
-1. Ensure there are **no** spaces in the image file name or path. This causes so many issues and I have yet to find a good solution. If you have a fix let me know.
+Drag and drop one or more .png or .pfm files onto the corresponding .bat file to automatically denoise the image, producing a file with the `_dn` suffix.
 
-2. Drag and drop one or more .png or .pfm files onto the corresponding .bat file to automatically denoise.
-
-Assuming you are using the PFM version, please drag an drop only the noisy images. The script will find the .albedo and .normal maps if they exist in the same directory else it will fall back.
+Assuming you are using the PFM version, please drag an drop only the noisy images (aka hdr images). The script will find the .albedo and .normal maps if they exist in the same directory else it will fall back.
