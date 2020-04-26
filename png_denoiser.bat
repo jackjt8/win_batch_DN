@@ -23,7 +23,7 @@ IF "%1"=="" GOTO Continue
 		IF NOT "%~x1"==".png" GOTO PNGerror
 		ECHO Input %~n1
 		ECHO Output %~n1_dn%~x1
-		%dn_path% -i %1 -o %~n1_dn%~x1
+		%dn_path% -i "%1" -o "%~n1_dn%~x1"
 		REM %dn_path2% -i %1 -o %~n1_dn%~x1
 		SHIFT
 	IF NOT "%1"=="" GOTO loop

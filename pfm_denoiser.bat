@@ -36,17 +36,17 @@ GOTO loop
 
 :denoise_h
 ECHO Found hdr
-%dn_path% -hdr %1 -o %~dp1%~n1_dn%~x1
+%dn_path% -hdr "%1" -o "%~dp1%~n1_dn%~x1"
 GOTO postdenoise
 
 :denoise_ha
 ECHO Found HDR and Albedo
-%dn_path% -hdr %1 -o %~dp1%~n1_dn%~x1 -alb %~dp1%~n1.albedo%~x1
+%dn_path% -hdr "%1" -o "%~dp1%~n1_dn%~x1" -alb "%~dp1%~n1.albedo%~x1"
 GOTO postdenoise
 
 :denoise_han
 ECHO Found HDR, Albedo, and Normal
-%dn_path% -hdr %1 -o %~dp1%~n1_dn%~x1 -alb %~dp1%~n1.albedo%~x1 -nrm %~dp1%~n1.normal%~x1
+%dn_path% -hdr "%1" -o "%~dp1%~n1_dn%~x1" -alb "%~dp1%~n1.albedo%~x1" -nrm "%~dp1%~n1.normal%~x1"
 GOTO postdenoise
 
 
