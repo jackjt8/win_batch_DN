@@ -1,8 +1,8 @@
 # Windows Drag'n'drop Batch Denoiser
-## PFM denoising using Intel Open Image Denoise.
-## PNG denoising using Declan Russell's IntelOIDenoiser and/or NvidiaAIDenoiser.
+
 ---
 
+## PFM denoising using Intel Open Image Denoise.
 ### Setup PFM
 
 1. Download:
@@ -11,6 +11,9 @@
 2. Edit the following line in `pfm_denoiser.bat` to reflect the actual location of `denoise.exe` on your computer:
 `SET dn_path="D:\Programs\oidn-1.2.0.x64.vc14.windows\bin\denoise.exe" `
 
+---
+
+## PNG denoising using Declan Russell's IntelOIDenoiser and/or NvidiaAIDenoiser.
 ### Setup PNG
 
 1. Download and setup one or both of following (assuming you meet the requirements):
@@ -31,6 +34,6 @@
 
 ### Usage
 
-Drag and drop one or more .png or .pfm files onto the corresponding .bat file to automatically denoise the image, producing a file with the `_dn` suffix.
+Drag and drop one or more .png or .pfm files onto the corresponding .bat file to automatically denoise the image, producing a file with the `_dn` suffix in the directory of the source images.
 
 Assuming you are using the PFM version, please drag an drop only the noisy images (aka hdr images). The script will find the .albedo and .normal maps if they exist in the same directory else it will fall back.
