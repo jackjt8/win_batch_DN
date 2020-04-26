@@ -1,6 +1,6 @@
 @ECHO off
 
-REM Get and setupL
+REM Get and setup
 REM
 REM IntelOIDenoiser (CPU must support SSE4.1)
 REM			https://github.com/DeclanRussell/IntelOIDenoiser
@@ -8,29 +8,34 @@ REM OR
 REM NvidiaAIDenoiser (Maxwell GPU or newer architecture with 418.xx or newer driver)
 REM 		https://github.com/DeclanRussell/NvidiaAIDenoiser
 REM
-REM Change dn_path to location of denoiser on your computer
+REM Change dn_path to the location of the denoiser.exe
 REM uncomment dn_path2 if you wish to compare both denoisers.
 REM
 REM Drag and drop one or more .pngs onto this .bat file to denoise them.
 
 
-SET dn_path="C:\Denoiser_v2.3\Denoiser.exe"
+SET dn_path="D:\Programs\oidn-Denoiser_v1.2\Denoiser.exe"
 REM SET dn_path2="C:\Denoiser_v1.1\Denoiser.exe"
 
 :Loop
 IF "%1"=="" GOTO Continue
-
-	FOR /F "tokens=1,2 delims=." %%a IN ("%1") DO (
-		ECHO Input %1
-		ECHO Output %%a_dn.%%b
-		%dn_path% -i %1 -o %%a_dn.%%b
-		REM %dn_path2% -i %1 -o %%a_dn2.%%b   		
-	)
+	:loop
+		IF NOT "%~x1"==".png" GOTO PNGerror
+		ECHO Input %~n1
+		ECHO Output %~n1_dn%~x1
+		%dn_path% -i %1 -o %~n1_dn%~x1
+		REM %dn_path2% -i %1 -o %~n1_dn%~x1
+		SHIFT
+	IF NOT "%1"=="" GOTO loop
 
 SHIFT
 GOTO Loop
-:Continue
 
+:PNGerror
+ECHO ### ERROR %1
+ECHO ### Is not a .png (or this script broke)
+
+:Continue
 ECHO .
 ECHO == END ==
 ECHO .
