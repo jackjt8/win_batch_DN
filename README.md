@@ -8,7 +8,8 @@
 1. Download:
       [Intel Open Image Denoise (CPU must support SSE4.1](https://openimagedenoise.github.io/downloads.html)
       
-2. Edit the following line to reflect the actual location on your computer: ` SET dn_path="D:\Programs\oidn-1.2.0.x64.vc14.windows\bin\denoise.exe" `
+2. Edit the following line in `pfm_denoiser.bat` to reflect the actual location of `denoise.exe` on your computer:
+`SET dn_path="D:\Programs\oidn-1.2.0.x64.vc14.windows\bin\denoise.exe" `
 
 ### Setup PNG
 
@@ -21,7 +22,8 @@
       [NvidiaAIDenoiser (Maxwell GPU or newer architecture with 418.xx or newer driver)](https://github.com/DeclanRussell/NvidiaAIDenoiser)
 
 
-2. Edit the following line to reflect the actual location on your computer: ` SET dn_path="C:\Denoiser_v2.3\Denoiser.exe" `
+2. Edit the following line in `png_denoiser.bat` to reflect the actual location of `Denoiser.exe` on your computer:
+`SET dn_path="C:\Denoiser_v2.3\Denoiser.exe" `
 
 (Optional) Uncomment both occurences and set `dn_path2` if you wish to compare both denoisers.
 
@@ -29,7 +31,7 @@
 
 ### Usage
 
-1. Ensure there are **no** spaces in the image file name or path. This causes so many issues and I have yet to find a good solution.
+1. Ensure there are **no** spaces in the image file name or path. This causes so many issues and I have yet to find a good solution. If you have a fix let me know.
 
 2. Drag and drop one or more .png or .pfm files onto the corresponding .bat file to automatically denoise.
 
