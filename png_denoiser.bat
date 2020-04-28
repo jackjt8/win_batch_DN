@@ -1,5 +1,5 @@
 @ECHO off
-REM win_batch_DN pfm_denoiser.bat v1.0.0
+REM win_batch_DN png_denoiser.bat v1.0.1
 REM Created by jackjt8
 REM https://github.com/jackjt8/win_batch_DN
 REM ~~~~

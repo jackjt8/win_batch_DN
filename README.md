@@ -15,6 +15,7 @@ For use with [leMaik's Chunky Denoising Plugin](https://github.com/leMaik/chunky
 ---
 
 ## PNG denoising using Declan Russell's IntelOIDenoiser and/or NvidiaAIDenoiser.
+Supports albedo and normals if formatted as .albedo.png and .normal.png
 ### Setup PNG
 
 1. Download and setup one or both of following (assuming you meet the requirements):
@@ -37,4 +38,4 @@ For use with [leMaik's Chunky Denoising Plugin](https://github.com/leMaik/chunky
 
 Drag and drop one or more .png or .pfm files onto the corresponding .bat file to automatically denoise the image, producing a file with the a `_dn` or `.denoised` suffix respectively in the directory of the source images.
 
-Assuming you are using the PFM version, please drag an drop only the noisy images (aka hdr images). The script will find the .albedo and .normal maps if they exist in the same directory else it will fall back.
+Please drag an drop only the noisy images (aka hdr images). The script will find the .albedo and .normal maps if they exist in the same directory else it will fall back.
