@@ -7,7 +7,7 @@ For use with [leMaik's Chunky Denoising Plugin](https://github.com/leMaik/chunky
 ### Setup PFM
 
 1. Download:
-      [Intel Open Image Denoise (CPU must support SSE4.1](https://openimagedenoise.github.io/downloads.html)
+      [Intel Open Image Denoise (CPU must support SSE4.1)](https://openimagedenoise.github.io/downloads.html)
       
 2. Edit the following line in `pfm_denoiser.bat` to reflect the actual location of `denoise.exe` on your computer:
 `SET dn_path="D:\Programs\oidn-1.2.0.x64.vc14.windows\bin\denoise.exe" `
