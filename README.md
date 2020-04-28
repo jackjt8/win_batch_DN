@@ -2,7 +2,8 @@
 
 ---
 
-## PFM denoising using Intel Open Image Denoise.
+## PFM denoising using Intel Open Image Denoise
+For use with https://github.com/leMaik/chunky-denoiser which produces hdr, albedo, and normals in the pfm format.
 ### Setup PFM
 
 1. Download:
