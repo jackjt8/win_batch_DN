@@ -41,4 +41,5 @@ Drag and drop one or more .png or .pfm files onto the corresponding .bat file to
 Please drag an drop only the noisy images (aka hdr images). The script will find the .albedo and .normal maps if they exist in the same directory else it will fall back.
 
 [Example with a single noisy .png (no albedo or normal map)](https://youtu.be/u1JbU6ybXXc)
+
 [Example with multiple noisy .pfm (range of albedo/normal maps)](https://youtu.be/rQ_LV9PfJH8)
