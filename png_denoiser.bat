@@ -25,9 +25,9 @@ REM SET dn_path2="D:\Programs\NvAIDN_v2.4\Denoiser.exe"
 IF "%1"=="" GOTO Continue
 	:loop
 		IF NOT "%~x1"==".png" GOTO PNGerror
-		ECHO Input %~n1
+		ECHO Input %~n1%~x1
 		ECHO Output %~n1_dn%~x1
-		REM %dn_path% -i "%1" -o "%~n1_dn%~x1"
+		%dn_path% -i "%1" -o "%~n1_dn%~x1"
 		REM %dn_path2% -i %1 -o %~n1_dn%~x1
 		SHIFT
 	IF NOT "%1"=="" GOTO loop
