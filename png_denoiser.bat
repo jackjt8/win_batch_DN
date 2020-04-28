@@ -22,24 +22,42 @@ SET dn_path="D:\Programs\oidn-Denoiser_v1.2\Denoiser.exe"
 REM SET dn_path2="D:\Programs\NvAIDN_v2.4\Denoiser.exe"
 
 :Loop
-IF "%1"=="" GOTO Continue
+IF "%1"=="" GOTO Break
 	:loop
 		IF NOT "%~x1"==".png" GOTO PNGerror
+		ECHO ===
 		ECHO Input %~n1%~x1
 		ECHO Output %~n1_dn%~x1
+		ECHO ===
+		REM check input
+		ECHO %~n1 | FINDSTR /C:".albedo" >nul && (
+			ECHO ### ERROR Wrong input - expected hdr but got albedo
+			GOTO Break
+		)
+		ECHO %~n1 | FINDSTR /C:".normal" >nul && (
+			ECHO ### ERROR Wrong input - expected hdr but got normal
+			GOTO Break
+		)
+		ECHO %~n1 | FINDSTR /C:".denoised" >nul && (
+			ECHO ### ERROR Wrong input - expected hdr but got a denoised image
+			GOTO Break
+		)
+		REM check input done
+		
 		%dn_path% -i "%1" -o "%~n1_dn%~x1"
 		REM %dn_path2% -i %1 -o %~n1_dn%~x1
 		SHIFT
-	IF NOT "%1"=="" GOTO loop
+	IF NOT "%1"=="" (GOTO loop) ELSE (GOTO Break)
+REM you should not end up here. If the following message shows I messed up.
+ECHO ### ERROR missed postdenoise and loop/break point
+GOTO Break	
 
-SHIFT
-GOTO Loop
 
 :PNGerror
 ECHO ### ERROR %1
 ECHO ### Is not a .png (or this script broke)
 
-:Continue
+:Break
 ECHO .
 ECHO == END ==
 ECHO .

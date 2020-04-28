@@ -31,11 +31,11 @@ IF "%1"=="" GOTO Break
 		)
 		ECHO %~n1 | FINDSTR /C:".normal" >nul && (
 			ECHO ### ERROR Wrong input - expected hdr but got normal
-			GOTO BREAK
+			GOTO Break
 		)
 		ECHO %~n1 | FINDSTR /C:".denoised" >nul && (
 			ECHO ### ERROR Wrong input - expected hdr but got a denoised image
-			GOTO BREAK
+			GOTO Break
 		)
 		REM check input done
 		
