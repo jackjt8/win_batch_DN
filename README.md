@@ -34,6 +34,6 @@
 
 ### Usage
 
-Drag and drop one or more .png or .pfm files onto the corresponding .bat file to automatically denoise the image, producing a file with the `_dn` suffix in the directory of the source images.
+Drag and drop one or more .png or .pfm files onto the corresponding .bat file to automatically denoise the image, producing a file with the a `_dn` or `.denoised` suffix respectively in the directory of the source images.
 
 Assuming you are using the PFM version, please drag an drop only the noisy images (aka hdr images). The script will find the .albedo and .normal maps if they exist in the same directory else it will fall back.
